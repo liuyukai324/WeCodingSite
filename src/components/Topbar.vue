@@ -4,7 +4,7 @@
       <div class="title">没有名字的coding站</div>
       <div class="nav">
         <ul>
-          <li>
+          <li @click="home">
             <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M9 18V42H39V18L24 6L9 18Z" fill="none" stroke="currentColor" stroke-width="4"
                     stroke-linecap="round" stroke-linejoin="round"/>
@@ -14,7 +14,7 @@
             </svg>
             <a href="javascript: ">首页</a>
           </li>
-          <li>
+          <li @click="code">
             <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="6" y="12" width="36" height="30" rx="2" fill="none" stroke="currentColor"
                     stroke-width="4" stroke-linejoin="round"/>
@@ -44,7 +44,21 @@
 </template>
 
 <script setup lang="ts">
-
+  import {useRouter} from "vue-router"
+  import router from "@/router";
+  defineProps(["router"])
+  console.log(router)
+  console.log(useRouter())
+  function home() {
+    router.replace({
+      name: "Home",
+    })
+  }
+  function code() {
+    router.replace({
+      name: "Code",
+    })
+  }
 </script>
 
 <style scoped>

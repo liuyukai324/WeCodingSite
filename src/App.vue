@@ -1,11 +1,12 @@
 <template>
-  <Topbar/>
+  <Topbar :router="router"/>
+  <router-view></router-view>
 </template>
 
 <script lang="ts" setup>
+  import {useRouter} from "vue-router"
+  const router = useRouter()
   import Topbar from "./components/Topbar.vue"
-  import Home from "./pages/Home.vue"
-  import Code from "./pages/Code.vue"
 </script>
 
 <style>
