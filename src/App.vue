@@ -141,7 +141,7 @@ body {
 
 .topbar .nav ul li:hover a,
 .topbar .nav ul li:hover svg {
-  color: #32aab7;
+  color: rgb(87, 221, 190);
 }
 
 .topbar .user {
