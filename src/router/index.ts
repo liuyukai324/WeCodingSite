@@ -1,23 +1,28 @@
 import {createRouter,createWebHistory} from "vue-router"
 // 组件
-import Code from "../pages/Code.vue"
-import Home from "../pages/Code.vue"
+import Home from "@/pages/Home.vue"
+import Code from "@/pages/Code.vue"
 
+// 创建路由
 const router = createRouter({
-    history:createWebHistory(),
+    history: createWebHistory(),
     routes: [
         {
-            name: "Home",
-            path: "/home",
-            component: Home
+            name: "home",
+            path: "",
+            component: Home,
         },
         {
-            name: "Code",
+            name: "home",
+            path: "/home",
+            component: Home,
+        },
+        {
+            name: "code",
             path: "/code",
-            component: Code
-        }
+            component: Code,
+        },
     ]
 })
-
 // 暴露
 export default router
