@@ -45,8 +45,6 @@
 </template>
 
 <script lang="ts" setup>
-import Home from "./pages/Home.vue"
-import Code from "./pages/Code.vue"
 import {useRouter} from "vue-router"
 
 const router = useRouter()
