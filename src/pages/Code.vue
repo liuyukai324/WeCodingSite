@@ -25,18 +25,45 @@
       </ul>
     </div>
   </div>
+  <div class="projects">
+    <div class="container">
+      <div class="project" v-for="project in projects">
+        <div class="cover"></div>
+        <div class="content">
+          <div class="name">{{ project.name }}</div>
+          <div class="description">{{ project.description }}</div>
+          <div class="tag">
+            <ul>
+              <li class="author">{{ project.author }}</li>
+              <li class="lang">{{ project.lang }}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import {ref} from "vue"
+
 let click = ref(1);
-function clicked(n:number) {
+function clicked(n: number) {
   if (click.value === n) {
     return "clicked"
   } else {
     return
   }
 }
+
+const projects = [
+  {
+    name: "test",
+    description: "这不是一个项目",
+    author: "admin",
+    lang: "ArkTS"
+  }
+]
 </script>
 
 <style scoped>
@@ -82,6 +109,7 @@ header .container span {
   cursor: pointer;
   justify-content: center;
   border-radius: 22px;
+  border: 2px solid transparent;
   transition: all 0.3s ease;
 }
 
@@ -93,10 +121,26 @@ header .container span {
   margin-right: 16px;
 }
 
-.projects-nav ul li:hover, .projects-nav ul li.clicked {
-  background-color: rgb(87, 221, 190);
+.projects-nav ul li:hover {
+  border: 2px solid #57DDBE;
+  transform: scale(1.05);
+}
+
+.projects-nav ul li.clicked {
+  background-color: #57DDBE;
   color: white;
   transform: scale(1.05);
 }
 
+.projects {
+  margin-top: 30px;
+}
+.projects .project {
+  width: 300px;
+  height: 240px;
+  background-color: skyblue;
+}
+.projects .project .cover {
+  background-image: linear-gradient(40deg, #2ecc71, #57DDBE, #3498db);
+}
 </style>
