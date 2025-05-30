@@ -27,43 +27,108 @@
   </div>
   <div class="projects">
     <div class="container">
-      <div class="project" v-for="project in projects">
-        <div class="cover"></div>
-        <div class="content">
-          <div class="name">{{ project.name }}</div>
-          <div class="description">{{ project.description }}</div>
-          <div class="tag">
-            <ul>
-              <li class="author">{{ project.author }}</li>
-              <li class="lang">{{ project.lang }}</li>
-            </ul>
-          </div>
+      <div v-for="project in projects" class="project">
+        <div class="cover" :style="{backgroundColor: project.cover}">
+          <span
+              :style="{
+                color: textColor(project.cover),
+                fontSize: `${textSize(project.name)}px`
+              }"
+					>
+            {{ project.name }}
+          </span>
         </div>
+				<div class="content">
+					<span class="author">作者：{{ project.author }}</span>
+					<span class="lang">语言：{{ project.lang }}</span>
+				</div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {ref} from "vue"
+import {computed, ref} from "vue"
 
+// 数据
+// #ffce80 #a3d8cc #74d2e7 #bff199 #ffe491 #e66c6a
 let click = ref(1);
+const projects = [
+  {
+    name: "一个没有名字的coding站",
+    cover: "#ffce80",
+    description: "这不是一个项目",
+    author: "admin",
+    lang: "ArkTS"
+  },
+  {
+    name: "我是名字",
+    cover: "#a3d8cc",
+    description: "这不是一个项目",
+    author: "admin",
+    lang: "ArkTS"
+  },
+  {
+    name: "test",
+    cover: "#74d2e7",
+    description: "这不是一个项目",
+    author: "admin",
+    lang: "ArkTS"
+  },
+  {
+    name: "1234567890",
+    cover: "#e66c6a",
+    description: "这不是一个项目",
+    author: "admin",
+    lang: "ArkTS"
+  },
+  {
+    name: "test",
+    cover: "#bff199",
+    description: "这不是一个项目",
+    author: "admin",
+    lang: "ArkTS"
+  },
+  {
+    name: "test",
+    cover: "#ffe491",
+    description: "这不是一个项目",
+    author: "admin",
+    lang: "ArkTS"
+  },
+]
+
+// 方法
 function clicked(n: number) {
   if (click.value === n) {
     return "clicked"
   } else {
-    return
+    return null
   }
 }
 
-const projects = [
-  {
-    name: "test",
-    description: "这不是一个项目",
-    author: "admin",
-    lang: "ArkTS"
+function textColor(color: string) {
+  const hex = color;
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
+  return luminance > 0.65 ? "black" : "white"
+}
+
+function textSize(title: string) {
+  const n = title.length
+  if (n <= 5) {
+		console.log(1)
+    return 38
   }
-]
+  if (n <= 10) {
+		console.log(2)
+    return 36
+  }
+	console.log(3)
+  return 24
+}
 </script>
 
 <style scoped>
@@ -135,12 +200,49 @@ header .container span {
 .projects {
   margin-top: 30px;
 }
-.projects .project {
-  width: 300px;
-  height: 240px;
-  background-color: skyblue;
+
+.projects .container {
+  display: grid;
+  max-width: 1000px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
 }
+
 .projects .project .cover {
-  background-image: linear-gradient(40deg, #2ecc71, #57DDBE, #3498db);
+	border-radius: 16px;
+  display: flex;
+  height: 130px;
+  align-items: center;
+  justify-content: center;
+	cursor: pointer;
+	transition: all 0.2s ease;
 }
+
+.projects .project .cover span {
+  font-weight: 600;
+  text-align: center;
+	cursor: pointer;
+}
+
+.projects .project .cover:hover {
+	transform: scale(1.05);
+}
+.projects .project .content {
+	padding: 0 8px;
+	color: white;
+	margin-right: 10px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+.projects .project .content .author {
+	display: block;
+	font-size: 22px;
+	font-weight: 500;
+	margin-bottom: 2px;
+}
+.projects .project .content .lang {
+	font-size: 18px;
+	color: #aaa;
+}
+
 </style>
