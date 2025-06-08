@@ -27,12 +27,12 @@
   </div>
   <div class="projects">
     <div class="container">
-      <div v-for="project in projects" class="project">
-        <div class="cover" :style="{backgroundColor: project.cover}">
+      <div v-for="project in projectList" class="project">
+        <div class="cover" :style="{backgroundColor: project.cover[0]}">
           <span
               :style="{
-                color: textColor(project.cover),
-                fontSize: `${textSize(project.name)}px`
+                color: project.cover[1],
+                fontSize: `${project.cover[2]}px`
               }"
 					>
             {{ project.name }}
@@ -48,7 +48,10 @@
 </template>
 
 <script setup lang="ts">
-import {computed, ref} from "vue"
+import {ref} from "vue"
+import axios from "axios"
+
+let projectList = ref<Array<any>>([])
 
 // 数据
 // #ffce80 #a3d8cc #74d2e7 #bff199 #ffe491 #e66c6a
@@ -107,28 +110,40 @@ function clicked(n: number) {
   }
 }
 
-function textColor(color: string) {
-  const hex = color;
-  const r = parseInt(hex.slice(1, 3), 16)
-  const g = parseInt(hex.slice(3, 5), 16)
-  const b = parseInt(hex.slice(5, 7), 16)
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
-  return luminance > 0.65 ? "black" : "white"
+// function textColor(color: string) {
+//   const hex = color;
+//   const r = parseInt(hex.slice(1, 3), 16)
+//   const g = parseInt(hex.slice(3, 5), 16)
+//   const b = parseInt(hex.slice(5, 7), 16)
+//   const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
+//   return luminance > 0.65 ? "black" : "white"
+// }
+//
+// function textSize(title: string) {
+//   const n = title.length
+//   if (n <= 5) {
+//     return 38
+//   }
+//   if (n <= 10) {
+//     return 36
+//   }
+//   return 24
+// }
+
+async function getProjects() {
+	try {
+		let response = await axios({
+			method: "get",
+			url: "/api/getProjects/all"
+		})
+		projectList.value = response.data
+		console.log(projectList.value)
+	} catch (err) {
+		console.error(err)
+	}
 }
 
-function textSize(title: string) {
-  const n = title.length
-  if (n <= 5) {
-		console.log(1)
-    return 38
-  }
-  if (n <= 10) {
-		console.log(2)
-    return 36
-  }
-	console.log(3)
-  return 24
-}
+getProjects()
 </script>
 
 <style scoped>
