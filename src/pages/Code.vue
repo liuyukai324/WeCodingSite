@@ -15,13 +15,13 @@
   <div class="projects-nav">
     <div class="container">
       <ul>
-        <li :class="clicked(1)" @click="click = 1">广场</li>
-        <li :class="clicked(2)" @click="click = 2">Scratch</li>
-        <li :class="clicked(3)" @click="click = 3">Python</li>
-        <li :class="clicked(4)" @click="click = 4">C++</li>
-        <li :class="clicked(5)" @click="click = 5">Web</li>
-        <li :class="clicked(6)" @click="click = 6">Java</li>
-        <li :class="clicked(7)" @click="click = 7">其它</li>
+        <li :class="clicked(1)" @click="click = {id: 1, lang: 'all'}">广场</li>
+        <li :class="clicked(2)" @click="click = {id: 2, lang: 'Scratch'}">Scratch</li>
+        <li :class="clicked(3)" @click="click = {id: 3, lang: 'Python'}">Python</li>
+        <li :class="clicked(4)" @click="click = {id: 4, lang: 'C++'}">C++</li>
+        <li :class="clicked(5)" @click="click = {id: 5, lang: 'Web'}">Web</li>
+        <li :class="clicked(6)" @click="click = {id: 6, lang: 'Java'}">Java</li>
+        <li :class="clicked(7)" @click="click = {id: 7, lang: 'other'}">其它</li>
       </ul>
     </div>
   </div>
@@ -48,14 +48,20 @@
 </template>
 
 <script setup lang="ts">
-import {ref} from "vue"
+import {ref, watch} from "vue"
 import axios from "axios"
 
 let projectList = ref<Array<any>>([])
 
 // 数据
 // #ffce80 #a3d8cc #74d2e7 #bff199 #ffe491 #e66c6a
-let click = ref(1);
+let click = ref<{
+	id: number,
+	lang: string
+}>({
+	id: 1,
+	lang: "all"
+});
 const projects = [
   {
     name: "一个没有名字的coding站",
@@ -103,7 +109,7 @@ const projects = [
 
 // 方法
 function clicked(n: number) {
-  if (click.value === n) {
+  if (click.value.id === n) {
     return "clicked"
   } else {
     return null
@@ -134,7 +140,7 @@ async function getProjects() {
 	try {
 		let response = await axios({
 			method: "get",
-			url: "/api/getProjects/all"
+			url: `/api/getProjects/${click.value.lang}`
 		})
 		projectList.value = response.data
 		console.log(projectList.value)
@@ -144,6 +150,7 @@ async function getProjects() {
 }
 
 getProjects()
+watch(click, getProjects)
 </script>
 
 <style scoped>
