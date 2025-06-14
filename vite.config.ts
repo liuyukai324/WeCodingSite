@@ -16,4 +16,12 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  // 开发时用
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:8080/",
+      }
+    }
+  }
 })
