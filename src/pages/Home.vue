@@ -22,7 +22,7 @@ const titleSpanList = [
   "codin",
   "coding"
 ]
-let titleSpan = ref("")
+let titleSpan = ref("coding")
 let i = 0
 onMounted(() => {
   let timer = setInterval(() => {
