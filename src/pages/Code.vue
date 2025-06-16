@@ -1,15 +1,17 @@
 <template>
 	<header>
 		<div class="container">
-			<svg width="96" height="96" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<rect x="6" y="12" width="36" height="30" rx="2" fill="none" stroke="currentColor" stroke-width="4"
-							stroke-linejoin="round"/>
-				<path d="M17.9497 24.0083L29.9497 24.0083" stroke="currentColor" stroke-width="4" stroke-linecap="round"
-							stroke-linejoin="round"/>
-				<path d="M6 13L13 5H35L42 13" stroke="currentColor" stroke-width="4" stroke-linecap="round"
-							stroke-linejoin="round"/>
-			</svg>
-			<span>仓库</span>
+      <div>
+        <svg width="96" height="96" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="12" width="36" height="30" rx="2" fill="none" stroke="currentColor" stroke-width="4"
+                stroke-linejoin="round"/>
+          <path d="M17.9497 24.0083L29.9497 24.0083" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round"/>
+          <path d="M6 13L13 5H35L42 13" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                stroke-linejoin="round"/>
+        </svg>
+        <span>仓库</span>
+      </div>
 		</div>
 	</header>
 	<div class="nav">
@@ -170,14 +172,18 @@ function refresh() {
 <style scoped>
 /* 头部 */
 header .container {
-	display: flex;
-	color: white;
-	justify-content: center;
-	align-items: center;
-	padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+header .container div {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-header .container span {
+header .container div span {
 	margin-left: 10px;
 	font-size: 70px;
 	font-weight: 600;
@@ -284,14 +290,14 @@ header .container span {
 
 .nav .button button:hover {
 	transform: scale(1.03);
-	border: 1px solid #379f88;
+	border: 1px solid #79DDC6;
 }
 
 .nav .button .add:active,
 .nav .filter .lang:active,
 .nav .filter .option div:active,
 .nav .button .refresh:active {
-	background-color: #5aa395;
+	background-color: #79DDC6;
 }
 
 .nav .button .manage:active {
