@@ -69,13 +69,13 @@
 	</div>
 	<div class="projects">
 		<div class="container">
-			<div v-for="project in viewProject" class="project">
+			<div v-for="project in viewProject" class="project glass">
 				<div class="content">
 					<span class="name">{{ project.name }}</span><br>
 					<span class="description">{{ project.description }}</span>
 				</div>
 				<ul class="tags">
-					<li class="author">
+					<li class="author glass">
 						<svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path
 								d="M24 20C27.866 20 31 16.866 31 13C31 9.13401 27.866 6 24 6C20.134 6 17 9.13401 17 13C17 16.866 20.134 20 24 20Z"
@@ -86,7 +86,7 @@
 						</svg>
 						{{ project.author }}
 					</li>
-					<li class="lang">
+					<li class="lang glass">
 						<svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M16 13L4 25.4322L16 37"
 								stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -317,12 +317,8 @@ header .container div span {
 
 .projects .project {
 	padding: 16px;
-	backdrop-filter: blur(10px);
 	border-radius: 10px;
 	overflow: hidden;
-	background: rgba(255, 255, 255, 0.1);
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-	border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .projects .project .content {
@@ -346,6 +342,7 @@ header .container div span {
 	margin-top: 10px;
 	list-style: none;
 	color: white;
+  flex-wrap: wrap;
 }
 .project .tags li {
 	display: flex;
@@ -354,10 +351,7 @@ header .container div span {
 	font-size: 16px;
 	font-weight: 500;
 	align-items: center;
-	background: rgba(255, 255, 255, 0.1);
-	box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
-	border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .project .tags li:last-child {
 	margin-right: 0;
