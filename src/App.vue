@@ -42,10 +42,10 @@ body {
   color: transparent;
 }
 .btn:hover {
-  filter: #57DDBE;
+  background-color: #57DDBE;
 }
 .btn:active {
-  filter: grayscale(20%);
+  background-color: #79DDC6;
 }
 </style>
 <style scoped>
