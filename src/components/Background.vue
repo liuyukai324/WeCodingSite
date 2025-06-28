@@ -1,15 +1,15 @@
 <template>
   <div class="background">
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
+<!--    <div class="ball"></div>-->
+<!--    <div class="ball"></div>-->
+<!--    <div class="ball"></div>-->
+<!--    <div class="ball"></div>-->
+<!--    <div class="ball"></div>-->
+<!--    <div class="ball"></div>-->
+<!--    <div class="ball"></div>-->
+<!--    <div class="ball"></div>-->
+<!--    <div class="ball"></div>-->
+<!--    <div class="ball"></div>-->
   </div>
 </template>
 
@@ -23,8 +23,7 @@
   position: absolute;
   height: 100vh;
   width: 100vw;
-  /*background-color: #080f11;*/
-  background-color: #282c34;
+  background-color: #141B2C;
   overflow: hidden;
 }
 

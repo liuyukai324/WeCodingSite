@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="container">
-      <div class="title">没有名字的<span>{{ titleSpan }}</span>站</div>
+      <div class="title linear">没有名字的<span>{{ titleSpan }}</span>站</div>
       <div class="text">
         没有名字的coding站<br>
         by 刘誉锴 陈瑾轩 杨鑫浩
@@ -50,11 +50,8 @@ header .container .title {
   align-items: center;
   height: calc(1em + 50px);
   margin: 40px;
-  background-image: linear-gradient(to right, #2ecc71, #3498db);
-  background-clip: text;
   font-size: 100px;
   font-weight: 900;
-  color: transparent;
 }
 
 header .container .title span {
