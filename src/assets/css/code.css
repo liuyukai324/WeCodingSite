@@ -1,0 +1,119 @@
+/* 头部 */
+header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+header .title {
+    grid-column: 2/span 4;
+}
+
+header .title .name {
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+header .title .text {
+    font-size: 24px;
+    font-weight: 350;
+    letter-spacing: 2px;
+    color: #9A9A9A;
+}
+
+header .card {
+    background: linear-gradient(123deg, rgba(129, 228, 255, 0.5) -13%,
+    rgba(255, 255, 255, 0.1) 137%);
+    grid-column: span 2;
+    padding: 26px 31px;
+    border-radius: 16px;
+    box-shadow: 0 0 10px 0 rgba(129, 228, 255, 0.5);
+}
+
+header .card .num {
+    font-size: 34px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #81E4FF;
+    margin-bottom: 10px;
+}
+
+header .card:nth-child(3) {
+    background: linear-gradient(123deg, rgba(255, 234, 129, 0.5) -13%,
+    rgba(255, 255, 255, 0.1) 137%);
+    box-shadow: 0 0 10px 0 rgba(255, 234, 129, 0.5);
+}
+
+header .card:nth-child(3) .num {
+    color: #FFEA81;
+}
+
+header .card:nth-child(4) {
+    background: linear-gradient(123deg, rgba(205, 129, 255, 0.5) -13%,
+    rgba(255, 255, 255, 0.1) 137%);
+    box-shadow: 0 0 10px 0 rgba(205, 129, 255, 0.5);
+}
+
+header .card:nth-child(4) .num {
+    color: #CD81FF;
+}
+
+header .card .num span {
+    font-size: 26px;
+}
+
+header .card .text {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+.filter-bar .container {
+    padding: 20px 23px;
+    border-radius: 10px;
+}
+.filter-bar .first {
+    display: flex;
+    gap: 33px;
+    margin-bottom: 25px;
+}
+
+.filter-bar .search {
+    display: flex;
+    padding: 12px 14px 11px 14px;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 16px;
+    flex: 1;
+}
+.filter-bar .search>div {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+.filter-bar .search>div img {
+    width: 20px;
+    margin-right: 10px;
+}
+.filter-bar .search input {
+    height: 20px;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    flex: 1;
+}
+.filter-bar .search input:focus {
+    outline: none;
+}
+.filter-bar .second {
+    display: flex;
+    gap: 27px;
+}
+.projects {
+    margin-top: 18px;
+}
+.projects .container>div {
+    grid-column: span 4;
+}

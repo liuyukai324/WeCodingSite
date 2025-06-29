@@ -23,7 +23,20 @@
   position: absolute;
   height: 100vh;
   width: 100vw;
-  background-color: #141B2C;
+  background:
+  radial-gradient(
+      63% 74% at 30% 90%, rgba(129, 228, 255, 0.2) 0%,
+      rgba(0, 0, 0, 0) 100%),
+  radial-gradient(
+      40% 48% at 72% 57%, rgba(205, 129, 255, 0.3) 1%,
+      rgba(0, 0, 0, 0) 100%),
+  radial-gradient(
+      33% 39% at 3% 36%, rgba(255, 234, 129, 0.3) 0%,
+      rgba(0, 0, 0, 0) 100%),
+  radial-gradient(
+      14% 17% at 98% 16%, rgba(87, 221, 190, 0.3) 0%,
+      rgba(0, 255, 196, 0) 100%),
+  #141B2C;
   overflow: hidden;
 }
 

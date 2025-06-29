@@ -3,9 +3,9 @@
     <div class="container">
       <div class="title linear">一个没有名字的coding站</div>
       <nav>
-        <span @click="home">首页</span>
-        <span @click="code">代码仓库</span>
-        <span>我的</span>
+        <a class="btn-text" @click="home">首页</a>
+        <a class="btn-text" @click="code">代码仓库</a>
+        <a class="btn-text">我的</a>
       </nav>
     </div>
   </div>
@@ -61,7 +61,10 @@ nav {
   font-weight: 500;
 }
 
-nav span {
+nav a {
   cursor: pointer;
+  background-color: white;
+  background-clip: text;
+  color: transparent;
 }
 </style>

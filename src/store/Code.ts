@@ -22,5 +22,6 @@ export const useCodeStore = defineStore("Code", () => {
             console.error(err)
         }
     }
+    getProjects()
     return {projectList, getProjects}
 })

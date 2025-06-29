@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="container">
-      <div class="title linear">没有名字的<span>{{ titleSpan }}</span>站</div>
+      <div class="title linear">没有名字的<span>coding</span>站</div>
       <div class="text">
         没有名字的coding站<br>
         by 刘誉锴 陈瑾轩 杨鑫浩
@@ -11,27 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import {ref,onMounted} from "vue"
 
-const titleSpanList = [
-  "",
-  "c",
-  "co",
-  "cod",
-  "codi",
-  "codin",
-  "coding"
-]
-let titleSpan = ref("coding")
-let i = 0
-onMounted(() => {
-  let timer = setInterval(() => {
-    titleSpan.value = titleSpanList[i++]
-    if (i === titleSpanList.length) {
-      clearInterval(timer)
-    }
-  }, 1000)
-})
 </script>
 
 <style scoped>
