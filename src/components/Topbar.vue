@@ -5,7 +5,7 @@
       <nav>
         <a class="btn-text" @click="home">首页</a>
         <a class="btn-text" @click="code">代码仓库</a>
-        <a class="btn-text">我的</a>
+        <a class="btn-text" @click="user">我的</a>
       </nav>
     </div>
   </div>
@@ -26,6 +26,10 @@ function code() {
   router.replace({
     path: "/code",
   })
+}
+
+function user() {
+  alert("想啥呢，（mei）（xie）（hao）")
 }
 </script>
 

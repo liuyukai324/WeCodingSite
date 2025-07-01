@@ -22,9 +22,9 @@ body {
 }
 
 .glass {
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    /*border: 1px solid rgba(255, 255, 255, 0.3);*/
 }
 
 .linear {
@@ -45,7 +45,6 @@ body {
     display: inline-block;
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 13px 20px;
     color: white;
     border-radius: 16px;
@@ -70,6 +69,7 @@ body {
 .btn {
     display: inline-block;
     background-color: #57DDBE;
+    border: 1px solid #57DDBE;
     padding: 13px 20px;
     color: white;
     border-radius: 16px;
@@ -81,4 +81,20 @@ body {
 .btn:active,
 .btn-icon:active {
     background-color: #79DDC6;
+}
+
+.ani-in {
+    transform: translateY(10px);
+    opacity: 0;
+    animation: ease 0.7s ani-in forwards;
+}
+@keyframes ani-in {
+    60% {
+        transform: translateY(-2px);
+        opacity: 0.9;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

@@ -5,7 +5,6 @@ import axios from "axios";
 export const useCodeStore = defineStore("Code", () => {
     const projectList = ref<Array<{
         name: string,
-        cover: Array<any>,
         description: string,
         author: string,
         lang: string
